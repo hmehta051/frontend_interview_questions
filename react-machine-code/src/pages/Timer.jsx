@@ -58,7 +58,7 @@ const Timer = () => {
   }, [count]);
   return (
     <div className="flex flex-col items-center justify-center h-[50%] w-[50%] m-auto border-2 border-green-700">
-      <h2 className="text-3xl">Star Component</h2>
+      <h2 className="text-3xl">Timer</h2>
       <p>{count}</p>
       <div className="flex space-x-4">
         <button

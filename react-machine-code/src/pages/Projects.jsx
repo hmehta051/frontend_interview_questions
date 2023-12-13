@@ -16,6 +16,26 @@ const Projects = () => {
       title: "Timer Advance",
       description: "Advance Timer with HH:MM:SS",
     },
+    {
+      id: 5,
+      title: "Flip Card",
+      description: "Flip Card",
+    },
+    {
+      id: 6,
+      title: "Accordion",
+      description: "Accordion",
+    },
+    {
+      id: 7,
+      title: "Progress Bar",
+      description: "Progress Bar",
+    },
+    {
+      id: 8,
+      title: "Tic Tac Toe",
+      description: "Tic Tac Toe",
+    },
     // Add more projects as needed
   ];
 

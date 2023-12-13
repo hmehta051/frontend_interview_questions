@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grid-main {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 10px 15px;
+      }
+      .same-grid {
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .same-grid:nth-child(2n) {
+        background-color: aqua;
+      }
+      .same-grid:nth-child(2n + 1) {
+        background-color: teal;
+      }
+      .same-grid:hover {
+        transform: rotate(20deg);
+      }
+      @media (max-width: 600px) {
+        .grid-main {
+          display: grid;
+          grid-template-columns: repeat(3, 50px);
+          grid-template-rows: repeat(3, 50px);
+          gap: 5px 10px;
+        }
+      }
+
+      .chessboard {
+        display: grid;
+        grid-template-columns: repeat(8, 50px);
+        grid-template-rows: repeat(8, 50px);
+      }
+      .rowBox {
+        width: 50px;
+        height: 50px;
+        border: 1px solid;
+      }
+      .row:nth-child(odd) .rowBox:nth-child(even),
+      .row:nth-child(even) .rowBox:nth-child(odd) {
+        background-color: rgb(134, 35, 35);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>MEDIA QUERY AND GRID/FLEXBOX</h1>
+    <!-- <div>
+      <h2>CSS GRID</h2>
+      <section class="grid-main">
+        <div class="same-grid">1</div>
+        <div class="same-grid">2</div>
+        <div class="same-grid">3</div>
+        <div class="same-grid">4</div>
+        <div class="same-grid">5</div>
+        <div class="same-grid">6</div>
+        <div class="same-grid">7</div>
+        <div class="same-grid">8</div>
+        <div class="same-grid">9</div>
+      </section>
+    </div> -->
+    <div class="chessboard">
+      <div class="row">
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+      </div>
+
+      <div class="row">
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+      </div>
+
+      <div class="row">
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+      </div>
+
+      <div class="row">
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+      </div>
+
+      <div class="row">
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+      </div>
+
+      <div class="row">
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+      </div>
+
+      <div class="row">
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+      </div>
+
+      <div class="row">
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+        <div class="rowBox"></div>
+      </div>
+    </div>
+  </body>
+</html>

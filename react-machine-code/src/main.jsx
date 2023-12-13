@@ -8,6 +8,10 @@ import Tabs from "./pages/Tabs.jsx";
 import StarRating from "./pages/StarRating.jsx";
 import Timer from "./pages/Timer.jsx";
 import TimerAdvance from "./pages/TimerAdvance.jsx";
+import FlipCard from "./pages/FlipCard.jsx";
+import Accordion from "./pages/Accordion.jsx";
+import ProgressBar from "./pages/ProgressBar.jsx";
+import TicTacToe from "./pages/TicTacToe.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +37,26 @@ const router = createBrowserRouter([
   {
     path: "/projects/4",
     element: <TimerAdvance />,
+  },
+  {
+    path: "/projects/5",
+    element: <FlipCard />,
+  },
+  {
+    path: "/projects/6",
+    element: <Accordion />,
+  },
+  {
+    path: "/projects/6",
+    element: <Accordion />,
+  },
+  {
+    path: "/projects/7",
+    element: <ProgressBar />,
+  },
+  {
+    path: "/projects/8",
+    element: <TicTacToe />,
   },
 ]);
 

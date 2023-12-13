@@ -30,7 +30,7 @@ const TimerAdvance = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center h-[50%] w-[50%] m-auto border-2 border-green-700">
-      <h2 className="text-3xl">Star Component</h2>
+      <h2 className="text-3xl">Timer Advance</h2>
       <div>
         <span>{hours}:</span>
         <span>{mins}:</span>

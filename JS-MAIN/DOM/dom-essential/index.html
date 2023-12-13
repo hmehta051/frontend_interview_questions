@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Semantic Layout</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      header,
+      nav,
+      main,
+      section,
+      article,
+      aside,
+      footer {
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid #ccc;
+      }
+      header {
+        background-color: #f2f2f2;
+      }
+      nav {
+        background-color: #e0e0e0;
+      }
+      main {
+        display: flex;
+      }
+      section,
+      aside {
+        flex: 1;
+        margin: 0 10px;
+      }
+      footer {
+        background-color: #f2f2f2;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Header</h1>
+      <p>Introductory content</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#">Nav Item 1</a></li>
+        <li><a href="#">Nav Item 2</a></li>
+        <li><a href="#">Nav Item 3</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Section</h2>
+        <p>Main content area</p>
+      </section>
+
+      <aside>
+        <h2>Aside</h2>
+        <p>Related content or sidebar</p>
+      </aside>
+    </main>
+
+    <footer>
+      <p>Footer - © 2023</p>
+    </footer>
+  </body>
+  <script src="./app.js"></script>
+</html>

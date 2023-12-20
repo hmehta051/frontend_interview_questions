@@ -12,6 +12,7 @@ import FlipCard from "./pages/FlipCard.jsx";
 import Accordion from "./pages/Accordion.jsx";
 import ProgressBar from "./pages/ProgressBar.jsx";
 import TicTacToe from "./pages/TicTacToe.jsx";
+import GridStack from "./pages/GridStack.jsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
   {
     path: "/projects/8",
     element: <TicTacToe />,
+  },
+  {
+    path: "/projects/9",
+    element: <GridStack />,
   },
 ]);
 

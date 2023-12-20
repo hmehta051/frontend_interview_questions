@@ -36,6 +36,11 @@ const Projects = () => {
       title: "Tic Tac Toe",
       description: "Tic Tac Toe",
     },
+    {
+      id: 9,
+      title: "Grid Stack",
+      description: "Grid Stack",
+    },
     // Add more projects as needed
   ];
 

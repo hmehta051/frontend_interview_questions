@@ -4,7 +4,7 @@
 
 -inline:width and height will have no effect and elements in same line (span,a,img,strong,i,small,em)
 -inline-block: you can set width and height and elements in same line
--inline-block: you can set width and height and elements in new line (div,p,li,h1,section)
+-block: you can set width and height and elements in new line (div,p,li,h1,section)
 -semantic tag: clearly defined content (form,table,nav,section,article,footer,table)
 
 ## Basics of Internet

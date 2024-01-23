@@ -13,6 +13,7 @@ import Accordion from "./pages/Accordion.jsx";
 import ProgressBar from "./pages/ProgressBar.jsx";
 import TicTacToe from "./pages/TicTacToe.jsx";
 import GridStack from "./pages/GridStack.jsx";
+import TransLateLanguage from "./pages/TransLateLanguage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "/projects/9",
     element: <GridStack />,
+  },
+  {
+    path: "/projects/10",
+    element: <TransLateLanguage />,
   },
 ]);
 

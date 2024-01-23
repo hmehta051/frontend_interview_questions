@@ -1,5 +1,5 @@
 import { useState } from "react";
-import questions from "../constants/accordionData";
+import questions from "../constants/accordionData.js";
 import AccordMini from "../components/AccordMini";
 
 const Accordion = () => {

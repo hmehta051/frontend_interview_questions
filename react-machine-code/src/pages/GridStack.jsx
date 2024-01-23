@@ -48,7 +48,6 @@ const GridStack = () => {
     if (newOrder.length === config.flat(1).filter(Boolean).length) {
       deactivateCells(newOrder);
     }
-    console.log(idx);
   };
   return (
     <div className="flex flex-col items-center justify-center h-full w-full m-auto">

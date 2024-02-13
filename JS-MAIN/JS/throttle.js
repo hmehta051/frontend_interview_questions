@@ -3,7 +3,7 @@ const throttle = (func, limit) => {
   return function (...args) {
     if (!inThrottle) {
       inThrottle = true;
-      func(...args);
+      func(...args); // func.apply(this,args)
       setTimeout(() => {
         inThrottle = false;
       }, limit);

@@ -43,8 +43,8 @@ const Projects = () => {
     },
     {
       id: 10,
-      title: "Translator",
-      description: "Translator",
+      title: "Moving Robot",
+      description: "Moving Robot",
     },
     // Add more projects as needed
   ];

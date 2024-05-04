@@ -14,4 +14,4 @@ function calculateExpression(a, b, type) {
     }
     return -1;
 }
-console.log(calculateExpression(1, 2, "add"));
+console.log(calculateExpression(1, 2, "add"))

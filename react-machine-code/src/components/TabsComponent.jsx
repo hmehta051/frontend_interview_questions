@@ -33,8 +33,8 @@ const TabsComponent = ({
                   idx === activeTab
                     ? "white"
                     : disabledTabs.includes(idx)
-                    ? "grey"
-                    : "black",
+                      ? "grey"
+                      : "black",
                 color: idx === activeTab ? "black" : "white",
                 width: "100px",
                 cursor: disabledTabs.includes(idx) ? "not-allowed" : "pointer",

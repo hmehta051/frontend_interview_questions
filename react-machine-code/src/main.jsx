@@ -14,6 +14,7 @@ import ProgressBar from "./pages/ProgressBar.jsx";
 import TicTacToe from "./pages/TicTacToe.jsx";
 import GridStack from "./pages/GridStack.jsx";
 import MovingRobot from "./pages/MovingRobot.jsx";
+import AutoComplete from "./pages/Autocomplete.jsx";
 
 const router = createBrowserRouter([
   {
@@ -68,10 +69,14 @@ const router = createBrowserRouter([
     path: "/projects/10",
     element: <MovingRobot />,
   },
+  {
+    path: "/projects/11",
+    element: <AutoComplete />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

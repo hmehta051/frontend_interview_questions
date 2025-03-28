@@ -70,7 +70,7 @@ const GridStack = () => {
             ) : (
               // eslint-disable-next-line react/jsx-key
               <span />
-            )
+            ),
           )}
         </div>
       </div>

@@ -37,3 +37,5 @@ const waitTwoSec = async () => {
   console.log(deduct);
 };
 waitTwoSec();
+
+

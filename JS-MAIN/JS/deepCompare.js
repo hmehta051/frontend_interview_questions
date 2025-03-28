@@ -165,27 +165,27 @@ checkDate(1650461086415);
 
 // // console.log(deepEqual(obj1, obj2));
 
-// function deepObj(obj1, obj2) {
-//   const keys1 = Object.keys(obj1);
-//   const keys2 = Object.keys(obj2);
-//   if (keys1.length !== keys2.length) {
-//     return false;
-//   }
+function deepObj(obj1, obj2) {
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+  if (keys1.length !== keys2.length) {
+    return false;
+  }
 
-//   for (keys of keys1) {
-//     const val1 = obj1[keys];
-//     const val2 = obj1[keys];
+  for (keys of keys1) {
+    const val1 = obj1[keys];
+    const val2 = obj1[keys];
 
-//     const areObjects = isObject(val1) && isObject(val2);
+    const areObjects = isObject(val1) && isObject(val2);
 
-//     // console.log(areObjects);
-//     if ((!areObjects && val1 !== val2) || (areObjects && !deepObj)) {
-//       return false;
-//     }
-//   }
-//   return true;
-// }
-// function isObject(object) {
-//   return object != null && typeof object === "object";
-// }
-// console.log(deepObj(obj1, obj2));
+    // console.log(areObjects);
+    if ((!areObjects && val1 !== val2) || (areObjects && !deepObj)) {
+      return false;
+    }
+  }
+  return true;
+}
+function isObject(object) {
+  return object != null && typeof object === "object";
+}
+console.log(deepObj(obj1, obj2));

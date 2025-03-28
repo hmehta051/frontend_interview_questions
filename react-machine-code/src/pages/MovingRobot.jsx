@@ -7,7 +7,7 @@ const MovingRobot = () => {
   const handleRight = () => {};
   const handleReport = () => {
     console.log(
-      `Current position: ${position.x}, ${position.y}, ${position.facing}`
+      `Current position: ${position.x}, ${position.y}, ${position.facing}`,
     );
   };
   return (

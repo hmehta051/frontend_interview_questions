@@ -101,7 +101,7 @@ Function.prototype.myApply = function(context,args=[]){
   return result;
 }
 
-Function.prototype.myApply = function(context,...args){
+Function.prototype.myBind = function(context,...args){
   if(typeof this !== 'function'){
     throw new Error(this + ' is not callable');
   }

@@ -46,6 +46,11 @@ const Projects = () => {
       title: "Moving Robot",
       description: "Moving Robot",
     },
+    {
+      id: 11,
+      title: "AutoComplete",
+      description: "AutoComplete",
+    },
     // Add more projects as needed
   ];
 

@@ -20,7 +20,8 @@ class MyMap {
   }
 
   has(key) {
-    return key in this.items;
+    // return key in this.items;
+    return this.items.hasOwnProperty(key);
   }
 
   remove(key) {

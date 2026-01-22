@@ -1,66 +1,40 @@
 class EventEmitter {
   constructor() {
-    this.events = {};
+    this.events = {}
   }
-
-  on(eventName, listener) {
+  on(eventName, listner) {
     if (!this.events[eventName]) {
-      this.events[eventName] = [];
+      this.events[eventName] = []
     }
-    this.events[eventName].push(listener);
-  }
-  off(eventName, deleteListener) {
-    if (!this.events[eventName]) {
-      return;
-    }
-    this.events[eventName] = this.events[eventName].filter(
-      (func) => func != deleteListener
-    );
+    this.events[eventName].push(listner)
   }
   emit(eventName, ...args) {
-    if (this.events[eventName].length !== 0) {
-      this.events[eventName].forEach((listener) => listener(...args));
+    if (!this.events[eventName]) return
+    this.events[eventName].forEach(listner => listner(...args))
+  }
+  off(eventName, deletelistner) {
+    if (!this.events[eventName]) {
+      return
     }
+    this.events[eventName] = this.events[eventName].forEach(elem => {
+      elem !== deletelistner
+    })
   }
-  once(eventName, listenerOnce) {
-    const onceWrapper = (...args) => {
-      listenerOnce(...args);
-      this.off(eventName, listenerOnce);
-    };
-    this.on(eventName, onceWrapper);
+  once(eventName, listner) {
+    const wrapper = (...args) => {
+      listner(...args)
+      this.off(eventName, wrapper)
+    }
+    this.on(eventName, wrapper)
   }
-  removeListener(eventName, listenerToRemove) {
-    this.off(eventName, listenerToRemove);
+  removeListner(eventName, listner) {
+    this.off(eventName, listner)
   }
-  removeAllListener(eventName) {
+  removeAllListner(eventName) {
     if (!eventName) {
-      this.events = {};
+      this.events = {}
     } else {
-      delete this.events[eventName];
+      delete this.events[eventName]
     }
   }
 }
-
-const eventMethod = new EventEmitter();
-function clickListener(name) {
-  console.log(`${name} Clicked`);
-}
-function clickListenerTwo(name) {
-  console.log(`${name} Clicked Twice`);
-}
-function hoverListener(name) {
-  console.log(`${name} Hover`);
-}
-function scrollListener(name) {
-  console.log(`${name} scroll`);
-}
-eventMethod.on("click", clickListener);
-eventMethod.on("click", clickListenerTwo);
-eventMethod.on("hover", hoverListener);
-eventMethod.on("scroll", scrollListener);
-
-eventMethod.off("click", clickListenerTwo);
-eventMethod.off("click", clickListener);
-
-eventMethod.emit("hover", "Hemendra");
-console.log(eventMethod);

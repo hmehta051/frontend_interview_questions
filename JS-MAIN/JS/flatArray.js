@@ -11,4 +11,4 @@ const flatArray = (arr, depth) => {
   return ans;
 };
 
-console.log(flatArray([1, 2, 3, 4, [6]]), 1);
+console.log(flatArray([1, 2, 3, 4, [6]], 1)); // was: depth=1 was outside the parens, passed to console.log instead

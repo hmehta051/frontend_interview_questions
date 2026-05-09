@@ -1,40 +1,58 @@
 class EventEmitter {
   constructor() {
-    this.events = {}
+    this.events = {};
   }
-  on(eventName, listner) {
+
+  on(eventName, listener) {
     if (!this.events[eventName]) {
-      this.events[eventName] = []
+      this.events[eventName] = [];
     }
-    this.events[eventName].push(listner)
+    this.events[eventName].push(listener);
   }
+
   emit(eventName, ...args) {
-    if (!this.events[eventName]) return
-    this.events[eventName].forEach(listner => listner(...args))
+    if (!this.events[eventName]) return;
+    this.events[eventName].forEach(listener => listener(...args));
   }
-  off(eventName, deletelistner) {
-    if (!this.events[eventName]) {
-      return
-    }
-    this.events[eventName] = this.events[eventName].forEach(elem => {
-      elem !== deletelistner
-    })
+
+  off(eventName, listenerToRemove) {
+    if (!this.events[eventName]) return;
+    // forEach returns undefined — must use filter to get the new array
+    this.events[eventName] = this.events[eventName].filter(
+      listener => listener !== listenerToRemove
+    );
   }
-  once(eventName, listner) {
+
+  once(eventName, listener) {
     const wrapper = (...args) => {
-      listner(...args)
-      this.off(eventName, wrapper)
-    }
-    this.on(eventName, wrapper)
+      listener(...args);
+      this.off(eventName, wrapper);
+    };
+    this.on(eventName, wrapper);
   }
-  removeListner(eventName, listner) {
-    this.off(eventName, listner)
+
+  removeListener(eventName, listener) {
+    this.off(eventName, listener);
   }
-  removeAllListner(eventName) {
+
+  removeAllListeners(eventName) {
     if (!eventName) {
-      this.events = {}
+      this.events = {};
     } else {
-      delete this.events[eventName]
+      delete this.events[eventName];
     }
   }
 }
+
+// Usage
+const emitter = new EventEmitter();
+
+const greet = (name) => console.log(`Hello, ${name}!`);
+emitter.on("greet", greet);
+emitter.emit("greet", "Hem");   // Hello, Hem!
+emitter.off("greet", greet);
+emitter.emit("greet", "Hem");   // (no output — listener removed)
+
+emitter.once("ping", () => console.log("pong"));
+emitter.emit("ping");           // pong
+emitter.emit("ping");           // (no output — fired only once)

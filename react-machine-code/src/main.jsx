@@ -50,10 +50,6 @@ const router = createBrowserRouter([
     element: <Accordion />,
   },
   {
-    path: "/projects/6",
-    element: <Accordion />,
-  },
-  {
     path: "/projects/7",
     element: <ProgressBar />,
   },

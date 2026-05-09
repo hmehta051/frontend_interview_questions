@@ -72,45 +72,42 @@ In other words, it helps you replace the value of "this" inside a function with 
 
 
 
-// FINAL POLYFILL CALL,APPLY,BIND
+// FINAL POLYFILL CALL, APPLY, BIND
 
-const globalThis = window // in js window, in nodejs global;
+const _globalThis = typeof window !== 'undefined' ? window : global;
 
-Function.prototype.myCall = function(context,...args){
-  if(typeof this !== 'function'){
+Function.prototype.myCall = function(context, ...args) {
+  if (typeof this !== 'function') {
     throw new Error(this + ' is not callable');
   }
-  context= context | globalThis;
-  context.fn=this;
+  context = context || _globalThis; // || not | (bitwise OR would coerce to number)
+  context.fn = this;
   const result = context.fn(...args);
   delete context.fn;
   return result;
-}
+};
 
-Function.prototype.myApply = function(context,args=[]){
-  if(typeof this !== 'function'){
+Function.prototype.myApply = function(context, args = []) {
+  if (typeof this !== 'function') {
     throw new Error(this + ' is not callable');
   }
-  if(!Array.isArray(args)){
-    throw new Error(args + " not an array")
+  if (!Array.isArray(args)) {
+    throw new Error(args + ' not an array');
   }
-  context= context | globalThis;
-  context.fn=this;
+  context = context || _globalThis;
+  context.fn = this;
   const result = context.fn(...args);
   delete context.fn;
   return result;
-}
+};
 
-Function.prototype.myBind = function(context,...args){
-  if(typeof this !== 'function'){
+Function.prototype.myBind = function(context, ...args) {
+  if (typeof this !== 'function') {
     throw new Error(this + ' is not callable');
   }
- 
-  context= context | globalThis;
-  
+  context = context || _globalThis;
   const self = this;
-
-  return function(...newArgs){
-    return self.apply(context,[...args,...newArgs]);
+  return function(...newArgs) {
+    return self.apply(context, [...args, ...newArgs]);
   };
 };

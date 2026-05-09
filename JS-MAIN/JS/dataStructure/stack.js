@@ -7,16 +7,11 @@ class Stack {
 
   push(item) {
     this.stack.push(item);
-    if (
-      this.minStack.length === 0 ||
-      item <= this.minStack[this.minStack.length - 1]
-    ) {
+    if (this.minStack.length === 0 || item <= this.minStack[this.minStack.length - 1]) {
       this.minStack.push(item);
     }
-    if (
-      this.maxStack.length === 0 ||
-      item >= this.maxStack[this.minStack.length - 1]
-    ) {
+    // was: this.maxStack[this.minStack.length - 1] — wrong stack used for index
+    if (this.maxStack.length === 0 || item >= this.maxStack[this.maxStack.length - 1]) {
       this.maxStack.push(item);
     }
   }
@@ -26,11 +21,11 @@ class Stack {
       return "Stack Underflow";
     }
     const removedItem = this.stack.pop();
-
-    if (removedItem === this.minStack[this.stack.length - 1]) {
+    // was: this.stack.length - 1 after pop — off by one; compare against top of each auxiliary stack
+    if (removedItem === this.minStack[this.minStack.length - 1]) {
       this.minStack.pop();
     }
-    if (removedItem === this.maxStack[this.stack.length - 1]) {
+    if (removedItem === this.maxStack[this.maxStack.length - 1]) {
       this.maxStack.pop();
     }
     return removedItem;
@@ -47,43 +42,35 @@ class Stack {
   size() {
     return this.stack.length;
   }
+
   printStack() {
-    let str = "";
-    for (let i = 0; i < this.stack.length; i++) {
-      str += this.stack[i] + " ";
-    }
-    return str.trim();
+    return this.stack.join(" ");
   }
+
+  // was swapped: min() returned from maxStack, max() returned from minStack
   min() {
-    if (this.maxStack.length === 0) {
-      return "Stack is empty";
-    }
-    return this.maxStack[this.maxStack.length - 1];
-  }
-  max() {
-    if (this.minStack.length === 0) {
-      return "Stack is empty";
-    }
+    if (this.minStack.length === 0) return "Stack is empty";
     return this.minStack[this.minStack.length - 1];
+  }
+
+  max() {
+    if (this.maxStack.length === 0) return "Stack is empty";
+    return this.maxStack[this.maxStack.length - 1];
   }
 }
 
 const stack = new Stack();
 
-// console.log(stack.isEmpty()); // Output: true
-
 stack.push(10);
 stack.push(20);
 stack.push(30);
+stack.push(5);
 
-console.log(stack.printStack()); // Output: 10 20 30
-
-console.log(stack.peek()); // Output: 30
-
-console.log(stack.pop()); // Output: 30
-
-console.log(stack.size()); // Output: 2
-
-console.log(stack.printStack()); // Output: 10 20
-console.log(stack.min());
-console.log(stack.max());
+console.log(stack.printStack()); // 10 20 30 5
+console.log(stack.peek());       // 5
+console.log(stack.min());        // 5
+console.log(stack.max());        // 30
+console.log(stack.pop());        // 5
+console.log(stack.min());        // 10
+console.log(stack.max());        // 30
+console.log(stack.size());       // 3

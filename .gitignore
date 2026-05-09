@@ -1,1 +1,3 @@
-./react-machine-code/node_modules
+react-machine-code/node_modules
+.DS_Store
+**/.DS_Store

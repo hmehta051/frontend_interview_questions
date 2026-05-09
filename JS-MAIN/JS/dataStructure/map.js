@@ -8,7 +8,8 @@ class MyMap {
   }
 
   get(key) {
-    return this.items[key] || undefined;
+    // was: || undefined — returns undefined for falsy stored values (0, false, "")
+    return this.items.hasOwnProperty(key) ? this.items[key] : undefined;
   }
 
   size() {
